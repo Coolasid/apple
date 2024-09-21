@@ -96,11 +96,8 @@ const VideoCarousel = () => {
   useEffect(() => {
     if (loadedData.length > 3) {
       if (!isPlaying) {
-        console.log("inside", isPlaying);
         videoRef.current[videoId].pause();
       } else {
-        console.log("videoRef", videoRef);
-        console.log("startPlay", startPlay);
         startPlay && videoRef.current[videoId].play();
       }
     }
@@ -152,7 +149,6 @@ const VideoCarousel = () => {
                       : handleProcess("video-last")
                   }
                   onPlay={() => {
-                    console.log("inside onPlay");
                     setVideo((pre) => ({ ...pre, isPlaying: true }));
                   }}
                   onLoadedMetadata={(e) => handleLoadedMetaData(i, e)}
